@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:background="#FFF"
+        android:padding="5dp"
+        android:stretchColumns="1, 2, 3" >
+
+        <TableRow
+            android:id="@+id/tableRow1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <TextView
+                android:id="@+id/tv_billInputString"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="right"
+                android:paddingRight="5dp"
+                android:text="@string/billTotalString" />
+
+            <EditText
+                android:id="@+id/billEditText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_span="3"
+                android:layout_weight="1"
+                android:inputType="numberDecimal" >
+
+                <requestFocus />
+            </EditText>
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/tableRow2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <TextView
+                android:id="@+id/tv_tenPercentString"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="1"
+                android:gravity="center"
+                android:text="@string/tenPercentString" />
+
+            <TextView
+                android:id="@+id/tv_fifteenPercentString"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/fifteenPercentString" />
+
+            <TextView
+                android:id="@+id/tv_twentyPercentString"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/twentyPercentString" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/tableRow3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <TextView
+                android:id="@+id/tv_tipString"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="right"
+                android:paddingRight="5dp"
+                android:text="@string/tipString"
+                android:textSize="14sp" />
+
+            <EditText
+                android:id="@+id/tip10EditText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:cursorVisible="false"
+                android:focusable="false"
+                android:inputType="text"
+                android:longClickable="false"
+                android:text="@string/zero" />
+
+            <EditText
+                android:id="@+id/tip15EditText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:cursorVisible="false"
+                android:focusable="false"
+                android:inputType="text"
+                android:longClickable="false"
+                android:text="@string/zero" />
+
+            <EditText
+                android:id="@+id/tip20EditText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:cursorVisible="false"
+                android:focusable="false"
+                android:inputType="text"
+                android:longClickable="false"
+                android:text="@string/zero" />
+
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/tableRow4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <TextView
+                android:id="@+id/tv_totalString"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="right"
+                android:paddingRight="5dp"
+                android:text="@string/totalString"
+                android:textSize="14sp" />
+
+            <EditText
+                android:id="@+id/total10EditText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:cursorVisible="false"
+                android:focusable="false"
+                android:inputType="text"
+                android:longClickable="false"
+                android:text="@string/zero" />
+
+            <EditText
+                android:id="@+id/total15EditText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:cursorVisible="false"
+                android:focusable="false"
+                android:inputType="text"
+                android:longClickable="false"
+                android:text="@string/zero" />
+
+            <EditText
+                android:id="@+id/total20EditText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:cursorVisible="false"
+                android:focusable="false"
+                android:inputType="text"
+                android:longClickable="false"
+                android:text="@string/zero" />
+
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/tableRow5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <TextView
+                android:id="@+id/tv_custom"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="right|center_vertical"
+                android:paddingBottom="5dp"
+                android:paddingRight="5dp"
+                android:text="@string/customString"
+                android:textSize="14sp" />
+
+            <SeekBar
+                android:id="@+id/customSlider"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_span="2"
+                android:focusable="false"
+                android:paddingBottom="5dp"
+                android:paddingLeft="8dp"
+                android:paddingRight="8dp"
+                android:progress="18" />
+
+            <TextView
+                android:id="@+id/customTipTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                android:paddingBottom="5dp"
+                android:paddingLeft="5dp"
+                android:text="@string/defaultPercent" />
+
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/tableRow6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <TextView
+                android:id="@+id/tv_finalTip"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="right"
+                android:paddingRight="5dp"
+                android:text="@string/finalTipString"
+                android:textColorLink="#000" />
+
+            <EditText
+                android:id="@+id/tipCustomEditText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:cursorVisible="false"
+                android:focusable="false"
+                android:inputType="text"
+                android:longClickable="false"
+                android:text="@string/zero" />
+
+            <TextView
+                android:id="@+id/tv_finalTotal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="right"
+                android:paddingRight="5dp"
+                android:text="@string/finalTotalString"
+                android:textColorLink="#000" />
+
+            <EditText
+                android:id="@+id/totalCustomEditText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:cursorVisible="false"
+                android:focusable="false"
+                android:inputType="text"
+                android:longClickable="false"
+                android:text="@string/zero" />
+
+        </TableRow>
+
+        <Button
+            android:id="@+id/helpButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/helpButtonString" />
+
+    </TableLayout>

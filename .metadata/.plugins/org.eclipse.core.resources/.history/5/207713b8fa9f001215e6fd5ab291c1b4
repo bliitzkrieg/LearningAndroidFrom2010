@@ -1,0 +1,94 @@
+package com.example.assignmentsix;
+
+import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
+import android.widget.EditText;
+import android.widget.ImageView;
+import android.widget.TextView;
+import android.widget.Toast;
+import android.app.Activity;
+import android.content.Context;
+import android.content.Intent;
+
+
+public class ActivityTwo extends Activity {
+
+	String currentImage;
+	
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.main2);
+        
+        Intent intent = getIntent();
+        currentImage = intent.getStringExtra("image");
+		
+        ImageView img = (ImageView) findViewById(R.id.imageTwo);	
+       
+        if(currentImage.equals("success")){
+        	img.setImageResource(R.drawable.success);
+        }
+        else if(currentImage.equals("firstworld")){
+        	img.setImageResource(R.drawable.firstworld);
+        }
+        else if(currentImage.equals("onedoesnot")){
+        	img.setImageResource(R.drawable.onedoesnot);
+        }
+        else if(currentImage.equals("overattached")){
+        	img.setImageResource(R.drawable.overattached);   
+        }
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.activity_main2, menu);
+        return true;
+    }
+    
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item){
+    	Toast toast;
+    	Context context = getApplicationContext();
+    	switch (item.getItemId()){
+    	case R.id.help:
+    		Intent helpIntent = new Intent(context, Help.class);
+    		startActivity(helpIntent);	
+    	return true;
+    	case R.id.next:
+    		EditText topCaptionET = (EditText) findViewById(R.id.etTop);
+    		String topCaption = topCaptionET.getText().toString();
+    		EditText botCaptionET = (EditText) findViewById(R.id.etBottom);
+    		String botCaption = botCaptionET.getText().toString();
+    		TextView error = (TextView) findViewById(R.id.tvError);
+    		if(!topCaption.matches("")){
+    			if(!botCaption.matches("")){
+    	    		Intent intent = new Intent(context, ActivityThree.class);
+    	    		intent.putExtra("image", currentImage);
+    	    		intent.putExtra("top", topCaption);
+    	    		intent.putExtra("bot", botCaption);	
+    	    		startActivity(intent);	
+    			}
+    			else{
+    				error.setText("Please fill in both textboxes");
+    			}
+    		}
+    		else{
+    			error.setText("Please fill in both textboxes");
+    		}
+    	
+    	return true;
+    	case R.id.signup:
+    		Intent singUpIntent = new Intent(context, signUp.class);
+    		startActivity(singUpIntent);	
+    	return true;
+    	default:
+    		return super.onOptionsItemSelected(item);
+    	}
+    }
+    
+    
+    
+}

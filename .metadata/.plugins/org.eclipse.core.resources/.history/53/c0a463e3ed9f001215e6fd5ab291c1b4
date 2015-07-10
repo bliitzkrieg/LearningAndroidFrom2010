@@ -1,0 +1,22 @@
+package com.example.assignmentsix;
+
+public class DatabaseAdapter {
+	public static final String DB_ROWID = "id";
+	public static final String DB_USERNAME = "username";
+	public static final String DB_PASSWORD = "password";
+	public static final String DB_PHONE = "phone";
+	public static final String DB_EMAIL = "email";
+	public static final String DB_CONTEST = "contest";
+	
+	private static final String DB_NAME = "Memegen";
+	private static final String DB_TABLE = "users";
+	private static final int DB_VERSION = 2;
+	
+	private static final String DB_CREATE = 
+			"create table if not exists Memegen (id integer primary key autoincrement, username VARCHAR not null, password VARCHAR not null, phone VARCHAR not null, " +
+			"email VARCHAR not null, contest BOOLEAN)";
+	private final Context context;
+	
+	private DatabaseHelper DBHelper;
+	private SQLiteDatabase db;
+}

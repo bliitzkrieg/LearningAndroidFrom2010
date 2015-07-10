@@ -1,0 +1,53 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <TextView
+        android:id="@+id/header"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:text="Help"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <TextView
+        android:id="@+id/tvCreater"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/header"
+        android:layout_marginLeft="26dp"
+        android:layout_marginTop="30dp"
+        android:text="This Project was created by Luca DeCaprio" />
+
+    <TextView
+        android:id="@+id/tvDescription"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/tvCreater"
+        android:layout_below="@+id/tvCreater"
+        android:layout_marginTop="20dp"
+        android:text="It&apos;s purpose is to be a &quot;Meme&quot; generator on which you apply text ontop of images. " />
+
+    <TextView
+        android:id="@+id/tvDueDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/tvDescription"
+        android:layout_below="@+id/tvDescription"
+        android:layout_marginTop="16dp"
+        android:text="This project is due on Monday, April 8th, 2013" />
+
+    <TextView
+        android:id="@+id/tvCopyright"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/tvDueDate"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="122dp"
+        android:text="This project&apos;s COPYRIGHT belong to Luca DeCaprio" />
+
+</RelativeLayout>

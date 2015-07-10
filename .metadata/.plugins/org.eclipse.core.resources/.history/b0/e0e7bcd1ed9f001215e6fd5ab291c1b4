@@ -1,0 +1,11 @@
+package com.example.assignmentsix;
+
+public class DatabaseAdapter {
+	public static final String DB_ROWID = "id";
+	public static final String DB_USERNAME = "username";
+	public static final String DB_PASSWORD = "password";
+	public static final String DB_PHONE = "phone";
+	public static final String DB_EMAIL = "email";
+	public static final String DB_CONTEST = "contest";
+	
+}

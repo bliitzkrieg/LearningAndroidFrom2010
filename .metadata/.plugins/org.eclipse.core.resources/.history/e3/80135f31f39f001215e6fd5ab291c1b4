@@ -1,0 +1,108 @@
+package com.example.assignmentsix;
+
+import com.deitel.addressbook.DatabaseConnector;
+import com.deitel.addressbook.DatabaseConnector.DatabaseOpenHelper;
+
+import android.os.Bundle;
+import android.app.Activity;
+import android.content.Context;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
+import android.widget.CheckBox;
+import android.widget.EditText;
+import android.widget.TextView;
+import android.widget.Toast;
+import android.database.Cursor;
+import android.database.SQLException;
+import android.database.sqlite.SQLiteDatabase;
+import android.database.sqlite.SQLiteOpenHelper;
+import android.database.sqlite.SQLiteDatabase.CursorFactory;
+
+
+public class signUp extends Activity {
+
+	EditText username,password, email, phone;
+	CheckBox contest;
+	TextView error;
+	
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.signup);
+        
+        
+        
+        username = (EditText) findViewById(R.id.etUsername);
+        password = (EditText) findViewById(R.id.etPassword);
+        email = (EditText) findViewById(R.id.etEmail);
+        phone = (EditText) findViewById(R.id.etPhone);
+        error = (TextView) findViewById(R.id.tvError);  
+        
+        Button registerButton = (Button) findViewById(R.id.btnRegister);
+        registerButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View view) {
+            	String usernameCheck = username.getText().toString();
+            	String passwordCheck = password.getText().toString();
+            	String phoneCheck = phone.getText().toString();
+            	String emailCheck = email.getText().toString();
+            	
+            	if(usernameCheck.matches("") || passwordCheck.matches("") || phoneCheck.matches("") || emailCheck.matches("")){	
+            		error.setText("Please fill in all of the fields!");
+            		}
+            	else{
+            		//addusers
+            		addUser();
+            	}
+            }
+        });
+        
+        
+    }
+
+    
+    public void addUser(){
+	    DatabaseAdapter databaseConnector = new DatabaseAdapter(this);
+	    
+        databaseConnector.createUsers(
+                username.getText().toString(),
+                password.getText().toString(), 
+                phone.getText().toString(), 
+                email.getText().toString(),
+                contest.isChecked());
+    	
+    }
+    
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.activity_main, menu);
+        menu.getItem(1).setEnabled(false);
+        return true;
+    }
+    
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item){
+    	Toast toast;
+    	Context context = getApplicationContext();
+    	switch (item.getItemId()){
+    	case R.id.help:
+    		toast = Toast.makeText(context, "Please fill out all of the fields and click next on the menu bar.", Toast.LENGTH_SHORT);
+    		toast.show();
+    	return true;
+    	case R.id.next:
+    		toast = Toast.makeText(context, "Implemented in Step 4", Toast.LENGTH_SHORT);
+    		toast.show();
+    	return true;
+    	case R.id.signup:
+    	return true;
+    	default:
+    		return super.onOptionsItemSelected(item);
+    	}
+    }
+    
+    
+    
+}
